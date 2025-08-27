@@ -132,7 +132,7 @@ footer{text-align:center; padding:2rem; background:#111; margin-top:3rem; font-s
 <!-- Contact Section -->
 <section>
   <h2>Contact</h2>
-  <p>Twitter: <a href="https://twitter.com/example" target="_blank">@example</a></p>
+  <p>Twitter: <a href="https://x.com/AnimTalk_AI" target="_blank">@AnimTalk_AI</a></p>
 </section>
 
 <footer>
@@ -174,11 +174,9 @@ class Particle {
     this.x += this.speedX;
     this.y += this.speedY;
 
-    // Bounce edges
     if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
     if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
 
-    // Mouse interaction (attract)
     if (mouse.x && mouse.y) {
       let dx = mouse.x - this.x;
       let dy = mouse.y - this.y;
@@ -190,7 +188,6 @@ class Particle {
     }
   }
   draw() {
-    // Glow effect
     ctx.shadowBlur = 8;
     ctx.shadowColor = this.color;
     ctx.fillStyle = this.color;
@@ -214,7 +211,6 @@ function animate() {
     particlesArray[i].update();
     particlesArray[i].draw();
 
-    // Draw lines
     for (let j = i; j < particlesArray.length; j++) {
       const dx = particlesArray[i].x - particlesArray[j].x;
       const dy = particlesArray[i].y - particlesArray[j].y;
